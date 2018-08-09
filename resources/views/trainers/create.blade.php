@@ -5,7 +5,7 @@
 
 @section('content')
 
-    <form class="form-group" method="POST" action="/trainers">
+    <form class="form-group" method="POST" action="/trainers/result">
         @csrf
 
         <div class="form-group">

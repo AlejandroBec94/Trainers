@@ -2,6 +2,7 @@
 
 namespace LaraDex\Http\Controllers;
 
+use LaraDex\Trainer;
 use Illuminate\Http\Request;
 
 class TrainerController extends Controller
@@ -36,8 +37,13 @@ class TrainerController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->input('name');
+
+        $trainer = new Trainer();
+        $trainer->name = $request->input('name');
+        $trainer->save();
+        return "Saved";
         // return $request->all();
+        
     }
 
     /**

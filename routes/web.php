@@ -16,19 +16,18 @@
 // });
 
 
-Route::get('/trainers/create', function () {
+Route::get('/trainers/create/', function () {
      return view('trainers.create');
 });
 
-Route::resource('/','TrainerController');
+Route::resource('trainers/result','TrainerController');
+
+// Route::resource('/','TrainerController');
 
 Route::get('prueba/{alex}','PruebaController@prueba');
 
-Route::resource('trainers','TrainerController');
 
-Route::get('/user/{name}&{last?}',function($name,$last = " "){
-    return "Hola soy " . $name ." ". $last;
-});
+
 
 Route::get("/mi_primer_ruta",function(){
     return "Hello World";
