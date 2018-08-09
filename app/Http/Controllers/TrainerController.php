@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class TrainerController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +14,8 @@ class TrainerController extends Controller
      */
     public function index()
     {
-        return "hola";
+        // return view('home',['Name'=>"Alejandro Bec"]);
+        return "hpo";
     }
 
     /**
@@ -34,7 +36,8 @@ class TrainerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $request->input('name');
+        // return $request->all();
     }
 
     /**

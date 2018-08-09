@@ -11,9 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+Route::get('/trainers/create', function () {
+     return view('trainers.create');
 });
+
+Route::resource('/','TrainerController');
 
 Route::get('prueba/{alex}','PruebaController@prueba');
 
