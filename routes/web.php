@@ -15,20 +15,8 @@
 //     return view('welcome');
 // });
 
+Route::resource('/trainers','TrainerController');
 
 Route::get('/trainers/create', function () {
      return view('trainers.create');
-});
-
-Route::resource('/trainers/index','TrainerController');
-
-// Route::resource('/','TrainerController');
-
-Route::get('prueba/{alex}','PruebaController@prueba');
-
-
-
-
-Route::get("/mi_primer_ruta",function(){
-    return "Hello World";
 });

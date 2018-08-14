@@ -40,11 +40,17 @@ class TrainerController extends Controller
     public function store(Request $request)
     {
 
+        if($request->hasFile('avatar')){
+            $file = $request->file('avatar');
+            $name = time().$file->getClientOriginalName();
+            $file->move(public_path()."/images/",$name);
+        }
+
         $trainer = new Trainer();
-        $trainer->name = $request->input('name');
+        $trainer->name      = $request->input('name');
+        $trainer->avatar    = $name;
         $trainer->save();
-        return redirect('area/list');
-        // return $request->all();
+        return redirect('trainers/create');
         
     }
 
@@ -54,9 +60,10 @@ class TrainerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Trainer $trainer)
     {
-        //
+        // $trainer = Trainer::find($id);
+        return view("trainers.show",["trainer"=>$trainer]);
     }
 
     /**
