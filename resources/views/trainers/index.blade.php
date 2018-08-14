@@ -18,7 +18,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $trainer->name }}</h5>
                                     <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit beatae corporis natus suscipit fuga debitis maxime minus rerum officiis ut numquam soluta, eum corrupti fugiat itaque aspernatur odit ducimus deleniti?</p>
-                                <a href="/trainers/{{ $trainer->id }}" class="btn btn-primary">Go somewhere</a>
+                                <a href="/trainers/{{ $trainer->id }}" class="btn btn-primary">Ver mas..</a>
                                 </div>
 
                             </div>
