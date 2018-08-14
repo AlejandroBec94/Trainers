@@ -16,7 +16,9 @@ class TrainerController extends Controller
     public function index()
     {
         // return view('home',['Name'=>"Alejandro Bec"]);
-        return "hpo";
+        $trainers =  Trainer::all();
+        return view('trainers.index',compact('trainers'));
+
     }
 
     /**
@@ -41,7 +43,7 @@ class TrainerController extends Controller
         $trainer = new Trainer();
         $trainer->name = $request->input('name');
         $trainer->save();
-        return "Saved";
+        return redirect('area/list');
         // return $request->all();
         
     }

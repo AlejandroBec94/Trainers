@@ -16,11 +16,11 @@
 // });
 
 
-Route::get('/trainers/create/', function () {
+Route::get('/trainers/create', function () {
      return view('trainers.create');
 });
 
-Route::resource('trainers/result','TrainerController');
+Route::resource('/trainers/index','TrainerController');
 
 // Route::resource('/','TrainerController');
 
